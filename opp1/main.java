@@ -1,0 +1,132 @@
+public class main {
+    public static void main(String[] args) {
+
+        Sport football = new Sport("Football", 11);
+        Sport basketball = new Sport("Volleyball", 5);
+
+
+        Player player1 = new Player("Aslan", 21, "Football");
+        Player player2 = new Player("Arman", 19, "Volleyball");
+
+
+        SportsClub club = new SportsClub("Aitu Club");
+
+
+        football.printInfo();
+        basketball.printInfo();
+
+
+        player1.printInfo();
+        player2.printInfo();
+
+
+        club.printInfo();
+
+
+        if (player1.getAge() > player2.getAge()) {
+            System.out.println(player1.getName() + " is older than " + player2.getName());
+        } else if (player1.getAge() < player2.getAge()) {
+            System.out.println(player2.getName() + " is older than " + player1.getName());
+        } else {
+            System.out.println(player1.getName() + " and " + player2.getName() + " are the same age.");
+        }
+    }
+
+    public static class Player {
+        private String name;
+        private int age;
+        private String sport;
+
+
+        public Player(String name, int age, String sport) {
+            this.name = name;
+            this.age = age;
+            this.sport = sport;
+        }
+
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public int getAge() {
+            return age;
+        }
+
+        public void setAge(int age) {
+            this.age = age;
+        }
+
+        public String getSport() {
+            return sport;
+        }
+
+        public void setSport(String sport) {
+            this.sport = sport;
+        }
+
+
+        public void printInfo() {
+            System.out.println("Main.Player Name: " + name + ", Age: " + age + ", Main.Sport: " + sport);
+        }
+    }
+
+    public static class Sport {
+        private String name;
+        private int playersRequired;
+
+
+        public Sport(String name, int playersRequired) {
+            this.name = name;
+            this.playersRequired = playersRequired;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public int getPlayersRequired() {
+            return playersRequired;
+        }
+
+        public void setPlayersRequired(int playersRequired) {
+            this.playersRequired = playersRequired;
+        }
+
+
+        public void printInfo() {
+            System.out.println("Main.Sport: " + name + ", Players Required: " + playersRequired);
+        }
+    }
+
+    public static class SportsClub {
+        private String name;
+
+
+        public SportsClub(String name) {
+            this.name = name;
+        }
+
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+
+        public void printInfo() {
+            System.out.println("Sports Club Name: " + name);
+        }
+    }
+}
